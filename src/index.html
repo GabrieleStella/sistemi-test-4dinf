@@ -34,6 +34,16 @@
       ul {
         padding-left: 20px;
       }
+      .classifica-contenuto {
+        display: flex;
+        align-items: flex-start;
+      }
+      .classifica-contenuto img {
+        width: 120px;
+        height: auto;
+        border-radius: 8px;
+        margin-left: auto;
+      }
     </style>
   </head>
   <body>
@@ -44,11 +54,15 @@
     <main>
       <section id="classifica">
         <h2>Classifica dei Libri Più Letti</h2>
-        <ul>
-          <li>Libro 1</li>
-          <li>Libro 2</li>
-          <li>Libro 3</li>
-        </ul>
+        <div class="classifica-contenuto">
+          <ul>
+            {%for post in posts%}
+            <li>{{post.title}}  -  {{post.author}}</li>
+            {%endfor%}
+          </ul>
+          
+          <img src="https://ardea.srl/it/wp-content/uploads/2015/03/libri-lettura.jpg" alt="Immagine di libri">
+        </div>
       </section>
     </main>
     <footer>
@@ -56,27 +70,3 @@
     </footer>
   </body>
 </html>
-
-          
-            
-          
-          
-            
-              
-                
-                  
-                    
-                  
-                  
-                    
-                  
-                
-              
-            
-          
-        
-      
-    
-    
-  
-
